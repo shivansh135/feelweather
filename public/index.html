@@ -1,0 +1,552 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: 'Dosis', sans-serif;
+      }
+	  @media only screen and (max-width: 1050px) {
+		body.world {
+		position: relative;
+		margin-top: 20px;
+        height: 100%;
+        width: 100%;
+		display: block;
+        background-color: #fff;
+		/*background-image: linear-gradient(45deg, black, transparent);*/
+		overflow-y: scroll;
+		animation-name: satisfy;
+		animation-duration: 4s;
+		animation-iteration-count: infinite;
+      }
+	  div.main {
+        position: relative;
+		height: auto;
+        top: 5%;
+        left: 2.5%;
+        width: 95%;
+        background-color: rgb(250 255 255 / 17%);
+        border-radius: 20px;
+		margin-bottom: 20px;
+	  }
+	  div.other {
+        position: relative;
+        height: auto;
+        top: 5%;
+        margin-left:2.5%;
+        width: 95%;
+        background-color: rgb(250 255 255 / 17%);
+        border-radius: 20px;
+      }
+	 ::-webkit-scrollbar {
+		 display: none;
+		}
+		div.flex{
+			position: relative;
+			width: 100%;
+			height: auto;
+			display: flex;
+			overflow-x: auto;
+			/*background: #ffffff0d;*/
+			border-radius: 20px;
+			padding: 2px;	  
+			
+		}
+		div.card{
+			min-width: 98px;
+			height: auto;
+			background-color: transparent;
+			border: 0;
+			border-radius: 0;
+			text-align: center;
+			color: #fff;
+			margin-right: 10px;
+			margin-left: 10px;
+	  }
+
+	  }
+
+      .world {
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        display: flex;
+		background-color: #fff;
+        /*background-image: linear-gradient(45deg, black, transparent);*/
+      }
+
+      .main {
+        position: relative;
+        height: 90%;
+        top: 5%;
+        left: 2.5%;
+        width: 30%;
+        background-color: rgb(250 255 255 / 17%);
+        border-radius: 20px;
+      }
+
+      .glass {
+        position: absolute;
+        height: 100%;
+        width: 50%;
+        background-color: rgb(250 255 255 / 17%);
+        border-radius: 20px 0px 0px 20px;
+        z-index: 0;
+      }
+
+      .other {
+        position: relative;
+        height: 90%;
+        top: 5%;
+        margin-left: 5%;
+        width: 60%;
+        background-color: rgb(250 255 255 / 17%);
+        border-radius: 20px;
+		overflow-y: scroll;
+      }
+
+      .pre {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        display: inline-block;
+        white-space: nowrap;
+      }
+
+      .tem {
+        color: #fff;
+        font-weight: 100;
+        font-size: 100px;
+        text-align: center;
+      }
+
+      .cont {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 5px;
+        text-align: center;
+      }
+	  .txt{
+		  color: white;;
+	  }
+	  .flex{
+		position: relative;
+		width: 100%;
+		height: auto;
+		display: flex;
+		overflow-x: auto;
+		/*background: #ffffff0d;*/
+		border-radius: 20px;
+		padding: 2px;	  
+		padding: 10px;
+      }
+	  
+	  ::-webkit-scrollbar {
+			width: 12px;
+			height: 13px;
+		}
+		
+		::-webkit-scrollbar-track {
+			box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
+			-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0); 
+			border-radius: 10px;
+		}
+		
+		::-webkit-scrollbar-thumb {
+			border-radius: 10px;
+			background-color: #fff;
+		}
+
+	  
+	  .card{
+		 min-width: 150px;
+		 height: auto;
+		 background-color: transparent;
+		 border: 0;
+		 border-radius: 0;
+		 text-align: center;
+		 color: #fff;
+		 margin-right: 10px;
+		 margin-left: 10px;
+	  }
+	  .icon{
+		font-size: 50px;
+		color:white;
+	  }
+	  .icon-s{
+		font-size: 50px;
+		color:white;
+	  }
+	  .icon-exs{
+		font-size: 30px;
+		color:white;
+	  }
+	  .tag{
+		  position: relative;
+		  height: auto;
+		  width: fit-content;
+		  color: #fff;
+		  border-radius: 10px;
+		  margin: 10px;
+		 margin-left: 2.5%;
+		  background-color: rgba(255, 255, 255, 0.082);
+		  padding: 8px;
+		  display: flex;
+		 
+	  }
+	  .deg{
+		  position: absolute;
+		  right: -10px;
+		  top: -10px;
+		  height: 10px;
+		  width: 10px;
+		  border-radius: 100px;
+		  border: 1px solid #fff;
+
+	  }
+    </style>
+  </head>
+  <body class = "world" id = "world">
+	
+    <form action='https://feelweather.herokuapp.com/city' method='POST' style="display: none;" id="location"> longi : <input type='text' name='longi' id="lon" >
+      <br> lati: <input type='text' name='lati' id="lat">
+      <br>
+      <button type='submit'> Send to backend </button>
+    </form>
+      <div class="main">
+        <div class="glass"></div>
+        <nav class="navbar">
+          <div class="cont">
+            <span class="navbar-brand mb-0 h1  pre" style="color: #fff;width: 100%;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+                <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
+                <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+              </svg> <div id = "place" onclick="getLocation()">Delhi </div> </span>
+          </div> 
+        </nav>
+        <div class="cont">
+		  <div style="color: #fff;" id = "date">22 May 01:42 pm</div>
+          <span class='tem' id = "temp">28</span>
+          <div></div>
+          <span class="material-symbols-outlined icon" id = "icon" style="font-size: 100px;">sunny</span>
+          <br>
+          <span style="color: #fff;" id = "wether">Sunny</span><br>
+          <span style="color: #fff;" id = "max/min">35/25</span>
+			<span style="color: #fff;"> Feels Like </span>
+			<span style="color: #fff;" id = "f_like">29</span>
+          
+        </div>
+			<div class = "cont">
+			  <nav class="navbar">
+				<div class="container-fluid">
+				  <a class="navbar-brand txt">Humidity </a>
+				  <div class="d-flex txt" role="search" id = "umas">
+					34
+				  </div>
+				</div>
+			  </nav>
+			  <nav class="navbar">
+				<div class="container-fluid">
+				  <a class="navbar-brand txt">Precipitation </a>
+				  <div class="d-flex txt" role="search" id = "Precipitation">
+					34
+				  </div>
+				</div>
+			  </nav>
+			  <nav class="navbar">
+				<div class="container-fluid">
+				  <a class="navbar-brand txt">Dawn</a>
+				  <div class="d-flex txt" role="search" id="dusk">
+					5:45
+				  </div>
+				</div>
+			  </nav>
+			  <nav class="navbar">
+				<div class="container-fluid">
+				  <a class="navbar-brand txt">Dusk</a>
+				  <div class="d-flex txt" role="search" id = "down">
+					6:54
+				  </div>
+				</div>
+			  </nav></div>
+      </div>
+      <div class="other">
+        <nav class="navbar navbar-expand-lg">
+          <div class="container-fluid">
+            <a class="navbar-brand" style="color: #fff;">
+              <h2>FeelWeather</h2>
+            </a>
+            <button class="navbar-toggler btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon" style="color:white;"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+              <form class="d-flex" role="search" action="https://feelweather.herokuapp.com/city_code" method="POST">
+                <input class="form-control me-2" type="search" placeholder="Search city" aria-label="Search" name="name">
+               
+                <button class="btn btn-outline-light" type="submit">Search</button>
+				<div class="btn btn-outline-light" onclick="getLocation()" style="margin-left: 10px;">
+					<span class="material-symbols-outlined">
+						navigation
+						</span>
+					</div>
+              </form>
+            </div>
+          </div>
+        </nav>
+		<div class = "tag">5 Days/3 Hours</div>
+		<div class = "cont" style="background-color: #ffffff0d;margin: 2.5%;width: 95%;border-radius: 20px;">
+			<div class="flex" id ="daily">
+			</div>
+			
+		</div>
+		<!--div class = "tag">10 days</div>
+		<div class = "cont" style="background-color: #ffffff0d;margin: 2.5%;width: 95%;border-radius: 20px;">
+			<div class="flex" id ="10days">
+			</div>
+			
+		</div-->
+		<div class = "tag">Description</div>
+		<div class = "cont" style="background-color: #ffffff0d;margin: 2.5%;text-align:left;width: 95%;border-radius: 20px;">
+			<span class="txt" style="font-size: 1.2rem;margin: 2.5%;">Visibility :</span>
+			<span class="txt" style="font-size: 1.2rem;margin: 2.5%;" id = "vis"></span><br>
+			<span class="txt" style="font-size: 1.2rem;margin: 2.5%;">Pressure :</span>
+			<span class="txt" style="font-size: 1.2rem;margin: 2.5%;" id = "press"></span><br>
+			<span class="txt" style="font-size: 1.2rem;margin: 2.5%;">Wind Speed :</span>
+			<span class="txt" style="font-size: 1.2rem;margin: 2.5%;" id = "Wind_Speed"></span><br>
+			<span class="txt" style="font-size: 1.2rem;margin: 2.5%;">Wind Direction :</span>
+			<span class="txt" style="font-size: 1.2rem;margin: 2.5%;" id = "Wind_dir"></span>
+			
+		</div>
+      </div>
+   
+    <div id="demo"></div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  </body>
+  <script>
+    var x = document.getElementById("demo");
+	var icon = {
+		"Rain":"rainy",
+		"Clear":['sunny','clear_night'],
+		"Clouds":"filter_drama",
+		"Thunderstorm":'thunderstorm',
+		"Sonw":"cloudy_snowing",
+		"Fog":"foggy",
+		"Haze":"waves",
+		"Dust":"windy",
+		'Sand':'air',
+		'Dust':'air',
+		"Tornado":"tornado",
+		"Mist":"dehaze"
+	}
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      } else {
+        alert("No Connection...");
+      }
+    }
+
+    function showPosition(position) {
+      document.getElementById('lat').value = position.coords.latitude;
+      document.getElementById('lon').value = position.coords.longitude;
+      document.getElementById("location").submit();
+	 
+    }
+	var mon = {1:"Jan",2:"Feb",3:"March",4:"April",5:"May",6:"June",7:"July",8:"Aug",9:"Sept",10:"Oct",11:"Nov",12:"Dec"}
+	var days = {0:"Sun",1:"Mon",2:"Tue",3:"Wed",4:"Thu",5:"Fri",6:"Sat"}
+	function calc_time(sec){
+		var date = new Date(sec*1000);
+		return date;
+	}
+
+	function calc_sun_time(sec){
+		var date = new Date(sec*1000);
+		var date_str = [date.getHours(),':',date.getMinutes()].join(' ');
+		return date_str;
+	}
+
+    function setcurrent(dict) {
+		console.log(dict);
+		var wether = dict.weather[0].main;
+		var date = new Date(dict.dt*1000);
+			if(wether == "Clear"){
+				if(date.getHours()>18 || date.getHours()<5){
+					var icone = icon[wether][1];
+				}
+				else{
+					var icone = icon[wether][0];
+				}
+			}
+			else{
+				var icone = icon[wether];
+			}
+			document.getElementById("icon").innerHTML = icone;
+			document.getElementById("wether").innerHTML = dict.weather[0].main;
+     	document.getElementById('temp').innerHTML = Math.ceil(dict.main.temp-273.15);
+		document.getElementById('place').innerHTML = dict.name;
+		document.getElementById('umas').innerHTML = dict.main.humidity + "%";
+		document.getElementById('f_like').innerHTML = Math.ceil(dict.main.feels_like-273.15);
+
+		var date = calc_time(dict.dt);
+		var date_str = [ days[date.getDay()],",",date.getDate(), mon[date.getMonth()+1],date.getHours(),':',date.getMinutes()].join(' ');
+		document.getElementById('date').innerHTML = date_str;
+		if(date.getHours() < calc_time(dict.sys.sunset).getHours() && date.getHours() > calc_time(dict.sys.sunrise).getHours()){
+			document.getElementById("world").style.backgroundColor = "#4A9FF5";
+			document.getElementById("world").style.backgroundImage = "linear-gradient(45deg, #033FFF, transparent)";
+		}
+		else{
+			document.getElementById("world").style.backgroundColor = "#150050";
+		}
+		document.getElementById('dusk').innerHTML = calc_sun_time(dict.sys.sunrise);
+		document.getElementById('down').innerHTML = calc_sun_time(dict.sys.sunset);
+		document.getElementById('vis').innerHTML = dict.visibility + "m";
+		document.getElementById('press').innerHTML = dict.main.pressure + "bar";
+		document.getElementById('Wind_Speed').innerHTML = dict.wind.speed + "mph";
+		var deg = dict.wind.deg;
+		var dir = 'North';
+		if(deg > 0&& deg<90){
+			dir = 'North-East';
+		}
+		else if(deg > 90 && deg<180){
+			dir = 'South-East';
+		}
+		else if(deg > 180 && deg<270){
+			dir = 'South-West';
+		}
+		else if(deg > 270 && deg < 360){
+			dir = 'North-West';
+		}
+		else if(deg == 0)dir = "North";
+		else if(deg == 90)dir = "East";
+		else if(deg == 180)dir = "South";
+		else if(deg == 270)dir = "West";
+		document.getElementById('Wind_dir').innerHTML = dir;
+	}
+
+	function create5days(tempr,date,disc,ic,id){
+		var size;
+		if(id=="daily")size="2rem";
+		else size = "1.3rem";
+		const card = document.createElement("div");
+		card.className = "card";
+		const container = document.createElement("div");
+		container.className="cont";
+		card.append(container);
+		const day = document.createElement("div");
+		day.style.color = "#fff";
+		day.innerHTML = date;
+		container.append(day);
+		const icon = document.createElement("span");
+		icon.className = "material-symbols-outlined icon";
+		icon.innerHTML = ic;
+		container.append(icon);
+		const temp = document.createElement("div");
+		temp.className = "tem";
+		temp.style.fontSize = size;
+		temp.innerHTML = tempr;
+		container.append(temp);
+		const wether = document.createElement("div");
+		temp.style.color = "#fff";
+		wether.innerHTML = disc;
+		container.append(wether);
+		
+
+		document.getElementById(id).append(card);
+	}
+
+	function set5days(dict){
+		let i;
+		for(i = 0;i<40;i++){
+			var temp = Math.ceil(dict.list[i].main.temp-273.15);
+			var date = calc_time(dict.list[i].dt);
+			var time = [days[date.getDay()],",",date.getHours(),':',date.getMinutes()].join(' ');
+			var wether = dict.list[i].weather[0].main;
+			if(wether == "Clear"){
+				if(date.getHours()>18 || date.getHours()<5){
+					var icone = icon[wether][1];
+				}
+				else{
+					var icone = icon[wether][0];
+				}
+			}
+			else{
+				var icone = icon[wether];
+			}
+			create5days(temp,time,wether,icone,"daily");
+		}
+	}
+	function daily(dict){
+		let i;
+		for(i = 0;i<10;i++){
+			if(i == 0){
+				document.getElementById("max/min").innerHTML = (Math.ceil(dict.list[i].temp.max-273.15)).toString() + '/' + (Math.ceil(dict.list[i].temp.min-273.15)).toString();
+				document.getElementById("Precipitation").innerHTML = (Math.ceil(dict.list[i].pop*100)) + "%";
+			
+			}
+			var temp_max = Math.ceil(dict.list[i].temp.max-273.15);
+			var temp_min = Math.ceil(dict.list[i].temp.min-273.15);
+			var temp = (temp_max).toString() + "/" + (temp_min).toString();
+			var date = calc_time(dict.list[i].dt);
+			var time = [days[date.getDay()],",",date.getDate(), mon[date.getMonth()+1]].join(' ');
+			var wether = dict.list[i].weather[0].main;
+			if(wether == "Clear"){
+				if(date.getHours()>18 || date.getHours()<5){
+					var icone = icon[wether][1];
+				}
+				else{
+					var icone = icon[wether][0];
+				}
+			}
+			else{
+				var icone = icon[wether];
+			}
+			create5days(temp,time,wether,icone,"10days");
+		}
+	}
+	function crate_card_hourly(ic,tempr,disc,date){
+		const card = document.createElement("div");
+		card.className = "card";
+		const container = document.createElement("div");
+		container.className="cont";
+		card.append(container);
+		const icon = document.createElement("span");
+		icon.className = "material-symbols-outlined icon";
+		icon.innerHTML = ic;
+		container.append(icon);
+		const temp = document.createElement("div");
+		temp.className = "tem";
+		temp.style.fontSize = "2rem";
+		temp.innerHTML = tempr;
+		container.append(temp);
+		const wether = document.createElement("div");
+		temp.style.color = "#fff";
+		wether.innerHTML = disc;
+		container.append(wether);
+		const day = document.createElement("div");
+		day.style.color = "#fff";
+		day.innerHTML = date;
+		container.append(day);
+
+		document.getElementById("hourly").append(card);
+	}
+
+	function five_days(){
+		
+	}
+	
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
