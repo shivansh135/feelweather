@@ -221,7 +221,7 @@
   </head>
   <body class = "world" id = "world">
 	
-    <form action='https://feelweather.herokuapp.com/city' method='POST' style="display: none;" id="location"> longi : <input type='text' name='longi' id="lon" >
+    <form action='/city' method='POST' style="display: none;" id="location"> longi : <input type='text' name='longi' id="lon" >
       <br> lati: <input type='text' name='lati' id="lat">
       <br>
       <button type='submit'> Send to backend </button>
@@ -294,7 +294,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
-              <form class="d-flex" role="search" action="https://feelweather.herokuapp.com/city_code" method="POST">
+              <form class="d-flex" role="search" action="/city_code" method="POST">
                 <input class="form-control me-2" type="search" placeholder="Search city" aria-label="Search" name="name">
                
                 <button class="btn btn-outline-light" type="submit">Search</button>
